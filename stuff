@@ -1,0 +1,117 @@
+colors = {"blue","white","brown"}
+#a set of 3 strings 
+print(colors)
+numbers = {1,2,3}
+print(numbers)
+print(type(colors)) #returns type of the objects in parentheses
+print(type(numbers)) 
+
+Empty = {} #NONONONONONO 
+print(type(Empty))
+Empty = set()
+print(type(Empty))
+
+print(isinstance(numbers,set)) #returns a boolean eg True or False
+
+Numbers = {3,2,1,2,3,-1}
+print(Numbers) #where is the other 1?
+
+
+colors1 = {"black","white"}
+colors2 = {"white","blue"}
+
+#intersection of two sets is "white"
+
+print(colors1.intersection(colors2))
+print(colors1.union(colors2))
+print(colors1.difference(colors2))
+print(colors2.difference(colors1))
+print(colors1 - colors2)
+print(colors2 - colors1)
+
+colors1.add("pink")
+print(colors1)
+colors1.remove("white")
+print(colors1)
+
+n1 = {3,3,6,6,9}
+n2 = {6,7,8,9,10,10}
+#intersection 
+#union
+#difference either way 
+#add element 
+#remove element 
+
+#Tuples
+Nums1 = (1,1,2,2,3)
+print(type(Nums1))
+print(Nums1[0])
+print(Nums1[-1])
+print(Nums1[0:-1]) #gives you all elements from 0, all the way until but NOT including the last 1 (which is -1)
+print(Nums1.count(1))
+animals = ("cat","cat","dog")
+print(animals.count("cat"))
+#There is an order 
+#YOu can subscript and find particular items 
+#You cannot CHANGE the item that way 
+#YOu CAN have duplicates
+#YOu can COUNT how many duplicates there are of a given item
+
+print(animals[::-1]) #reverse order 
+
+def area_of_rectangle(l,w):
+  return l,w,l*w
+
+bob = area_of_rectangle(5,3)
+print(bob)
+print(bob[0])
+print(bob[1])
+print(bob[2])
+print("The area of the rectangle Bob is " + str(bob[2]) + ".")
+
+
+band1 = ["John","Paul"]
+band2 = ["Ringo","George"]
+bands = [band1,band2]
+print(bands)
+#how do you get "John" from bands?
+print(bands[0]) #first element of bands is itself a list (band1)
+bands[0][0]
+#first element in the first element of bands
+
+friends1 = ["Bob","Jane"]
+friends2 = ["Jane","Sally"]
+friends3 = ["Sally","Lamar","Al"]
+#come up with a unique master list of friend names?
+
+all_friends = friends1 + friends2 + friends3
+
+print(all_friends)
+print(all_friends.count("Sally"))
+
+#Sets DO NOT admit duplicates 
+all_friends = set(all_friends)
+#converts a list into a set. But a set canNOT have duplicates. Therefore the set will only have unique names.
+print(all_friends)
+all_friends = list(all_friends)
+print(all_friends)
+#De-Duping a List 
+#1. assemble a list of what you're interested in 
+#2. convert that list into a set() 
+#3. now reconvert into list()
+
+all_friends_F = sorted(all_friends)
+print(all_friends_F)
+all_friends_B = sorted(all_friends, reverse = True)
+print(all_friends_B)
+
+all_friends.sort() #sort the original 
+all_friends_F = all_friends #make the forward version equal to the sorted original 
+all_friends_B = all_friends.copy() #take that sorted one and make copy
+all_friends_B.reverse() #reverse this order in place
+print(all_friends_B)
+
+del all_friends #delete original one that wasn't sorted in any way 
+
+print(all_friends_F, all_friends_B)
+print(all_friends)
